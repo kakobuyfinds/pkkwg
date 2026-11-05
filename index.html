@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#142b3b">
+  <title>MyCNBox spreadsheet – dansk guide til fund, størrelser og QC</title>
+  <meta name="description" content="Brug MyCNBox spreadsheet med omtanke: udforsk tøj og sneakers, sammenlign mål, læs QC-billeder og planlæg fragt. Dansk guide med kategorier og konkrete svar.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="da_DK">
+  <meta property="og:title" content="MyCNBox spreadsheet – færre gæt, bedre valg">
+  <meta property="og:description" content="En dansk købsguide med kategorier, målemetoder, billedtjek og en enkel plan for den samlede pris.">
+  <meta property="og:image" content="https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/43c209a6-8a42-460d-9c1c-29b576df33ad/AIR+MAX+90.png">
+  <meta property="og:image:alt" content="Nike Air Max 90 i lyse nuancer med mørke detaljer, vist fra siden">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MyCNBox spreadsheet – dansk købsguide">
+  <meta name="twitter:description" content="Se på mål, detaljer og fragt, før du vælger sneakers, tøj og accessories.">
+  <link rel="preconnect" href="https://static.nike.com" crossorigin>
+  <!--
+    Filnavn: index.html.
+    Selvstændig side uden eksterne skrifttyper, scripts eller stilark.
+
+    Søgning: MyCNBox spreadsheet. Googles resultatside kunne ikke tilgås;
+    de ti nedenstående domæner er relevante søgeresultater, ikke
+    bekræftede top-10-placeringer.
+
+    Research:
+    mycnbox.io — produktoversigter, QC
+    mycnbox.com — købsforløb
+    mycnbox.net — kategorier, begynderguide
+    mycnboxfind.com — produktfund, kildekontrol
+    mycnbox.co.uk — lokal tilpasning, fragt
+    mycnboxspreadsheets.org — sammenligning, planlægning
+    cnfanssheet.com — billedkontrol
+    spreadsheet-mycnbox.com — researchnoter
+    mycnboxlinks.com — produktnavigation
+    puroclassico.com — kategoriopdeling, QC
+
+    Temaerne er bearbejdet til original dansk vejledning.
+    Ingen priser, rabatter, vurderinger, lageroplysninger
+    eller serviceløfter er overtaget.
+
+    Fire sekundære søgetemaer:
+    MyCNBox produktfund
+    MyCNBox QC-billeder
+    MyCNBox størrelsesguide
+    MyCNBox fragtplanlægning
+
+    Lange søgefraser indgår som konkrete emner i artikler og FAQ.
+    Tilføj en selvrefererende canonical, når den offentlige URL kendes.
+  -->
+  <style>
+    :root{
+      color-scheme:light;
+      --ink:#142b3b;
+      --muted:#4f606b;
+      --paper:#f2f5f5;
+      --white:#fff;
+      --accent:#c9442c;
+      --soft:#fbe6df;
+      --line:#cbd5da;
+      --blue:#e1eaee
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
+    }
+    a{color:inherit;text-underline-offset:4px}
+    a:hover{text-decoration-thickness:2px}
+    a:focus-visible,summary:focus-visible{
+      outline:3px solid var(--accent);
+      outline-offset:5px
+    }
+    img{display:block;max-width:100%;height:auto}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2,h3{line-height:1.08;letter-spacing:-.04em}
+    h1{font-size:clamp(3.1rem,8.4vw,7.7rem);font-weight:800}
+    h2{font-size:clamp(2rem,4vw,3.3rem)}
+    h3{font-size:1.5rem}
+    p+p{margin-top:1rem}
+    .wrap{
+      width:min(1192px,calc(100% - 48px));
+      margin-inline:auto
+    }
+    .masthead{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding-block:20px;
+      border-bottom:1px solid var(--line)
+    }
+    .wordmark{
+      font-size:1.1rem;
+      font-weight:850;
+      letter-spacing:-.04em;
+      text-decoration:none
+    }
+    .wordmark span{color:var(--accent)}
+    .edition,.eyebrow{
+      font-size:.73rem;
+      font-weight:750;
+      text-transform:uppercase;
+      letter-spacing:.14em
+    }
+    .edition{color:var(--muted)}
+    .category-section{padding:20px 0 26px}
+    .category-title{
+      font-size:.83rem;
+      font-weight:700;
+      margin-bottom:11px
+    }
+    .categories{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:1px;
+      background:var(--line);
+      border:1px solid var(--line)
+    }
+    .categories a{
+      min-height:69px;
+      background:var(--white);
+      padding:10px 13px;
+      text-decoration:none;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      border-bottom:3px solid transparent;
+      font-size:.91rem;
+      font-weight:700;
+      line-height:1.3
+    }
+    .categories small{
+      font-size:.72rem;
+      font-weight:400;
+      color:var(--muted);
+      margin-top:4px
+    }
+    .categories a:hover{
+      background:var(--soft);
+      border-bottom-color:var(--accent)
+    }
+    .intro{
+      background:var(--ink);
+      color:var(--white);
+      padding:42px 0 0
+    }
+    .intro .eyebrow{color:#ffc2b1;margin-bottom:18px}
+    .intro h1 span{color:#ffaf98}
+    .intro-line{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:35px;
+      margin-top:24px;
+      padding-bottom:32px
+    }
+    .intro-line p{
+      max-width:64ch;
+      color:#d7e2e8;
+      font-size:1.05rem
+    }
+    .button{
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      min-height:48px;
+      padding:12px 20px;
+      background:var(--accent);
+      color:var(--white);
+      font-weight:750;
+      font-size:.9rem;
+      text-decoration:none;
+      white-space:nowrap
+    }
+    .button:hover{background:#ab3621}
+    .hero-panel{
+      display:grid;
+      grid-template-columns:1.4fr 1fr;
+      background:var(--white);
+      color:var(--ink);
+      border-top:6px solid var(--accent)
+    }
+    .hero-image{background:#f6f6f6;position:relative}
+    .hero-image img{
+      width:100%;
+      aspect-ratio:1.35;
+      object-fit:contain
+    }
+    .hero-image figcaption{
+      position:absolute;
+      bottom:12px;
+      left:16px;
+      background:var(--white);
+      padding:5px 9px;
+      font-size:.73rem;
+      max-width:calc(100% - 32px)
+    }
+    .hero-answer{
+      padding:30px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:17px
+    }
+    .hero-answer h2{font-size:1.85rem}
+    .hero-answer p{font-size:.92rem;color:var(--muted)}
+    .hero-answer .short{
+      font-size:.72rem;
+      letter-spacing:.14em;
+      color:var(--accent);
+      font-weight:800;
+      text-transform:uppercase
+    }
+    .hero-answer ul{margin:0;padding-left:19px;font-size:.88rem}
+    .hero-answer li+li{margin-top:5px}
+    .intro-bottom{padding:18px 0;color:#c9d8df;font-size:.78rem}
+    .section{padding-block:58px}
+    .section-heading{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:35px;
+      align-items:end;
+      margin-bottom:30px
+    }
+    .section-heading .eyebrow{
+      color:var(--accent);
+      margin-bottom:12px
+    }
+    .section-heading>p{color:var(--muted);max-width:58ch}
+    .reading-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px
+    }
+    .guide{
+      background:var(--white);
+      padding:30px;
+      border-top:3px solid var(--ink)
+    }
+    .guide .number{
+      font-size:.72rem;
+      font-weight:850;
+      color:var(--accent);
+      letter-spacing:.14em;
+      display:block;
+      margin-bottom:15px
+    }
+    .guide h3{margin-bottom:16px}
+    .guide>p{font-size:.94rem;color:var(--muted)}
+    .guide dl{margin:24px 0 0}
+    .guide dl>div{
+      border-top:1px solid var(--line);
+      padding-top:14px;
+      margin-top:14px
+    }
+    .guide dt{
+      font-weight:750;
+      font-size:.93rem;
+      line-height:1.4
+    }
+    .guide dd{
+      margin:7px 0 0;
+      color:var(--muted);
+      font-size:.88rem
+    }
+    .guide .article-link{
+      display:inline-block;
+      margin-top:23px;
+      color:var(--accent);
+      font-size:.87rem;
+      font-weight:750
+    }
+    .atlas{background:var(--blue)}
+    .atlas-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:16px
+    }
+    .atlas figure{background:var(--white)}
+    .atlas img{
+      width:100%;
+      aspect-ratio:1;
+      object-fit:contain;
+      background:#f7f7f7
+    }
+    .atlas figcaption{
+      padding:18px;
+      font-size:.84rem;
+      line-height:1.6
+    }
+    .atlas figcaption strong{
+      display:block;
+      font-size:1rem;
+      line-height:1.3;
+      margin-bottom:9px
+    }
+    .image-note{
+      font-size:.77rem;
+      color:var(--muted);
+      margin-top:20px;
+      max-width:95ch
+    }
+    .cost-layout{
+      display:grid;
+      grid-template-columns:.75fr 1.25fr;
+      gap:50px
+    }
+    .cost-layout .eyebrow{
+      color:var(--accent);
+      margin-bottom:15px
+    }
+    .cost-layout header p{
+      color:var(--muted);
+      margin-top:20px
+    }
+    .table-shell{
+      overflow:auto;
+      background:var(--white);
+      border:1px solid var(--line)
+    }
+    table{width:100%;border-collapse:collapse;font-size:.9rem}
+    caption{
+      text-align:left;
+      background:var(--ink);
+      color:var(--white);
+      padding:16px 20px;
+      font-weight:750
+    }
+    th,td{
+      text-align:left;
+      vertical-align:top;
+      padding:15px 20px;
+      border-bottom:1px solid var(--line)
+    }
+    thead{background:var(--blue)}
+    th{font-weight:750}
+    tbody tr:last-child>*{border-bottom:0}
+    .cost-note{font-size:.83rem;color:var(--muted);margin-top:15px}
+    .faq-section{border-top:1px solid var(--line)}
+    .faq-layout{
+      display:grid;
+      grid-template-columns:.7fr 1.3fr;
+      gap:60px
+    }
+    .faq-layout header .eyebrow{
+      margin-bottom:15px;
+      color:var(--accent)
+    }
+    .faq-layout header p{margin-top:20px;color:var(--muted)}
+    details{padding:20px 0;border-bottom:1px solid var(--line)}
+    details:first-child{padding-top:0}
+    summary{
+      cursor:pointer;
+      font-size:1rem;
+      font-weight:750;
+      line-height:1.4
+    }
+    details p{
+      color:var(--muted);
+      font-size:.92rem;
+      margin-top:12px
+    }
+    .closing{
+      background:var(--accent);
+      color:var(--white);
+      padding:32px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:30px;
+      margin-bottom:45px
+    }
+    .closing h2{font-size:2rem}
+    .closing p{margin-top:10px;max-width:60ch;font-size:.93rem}
+    .closing .button{background:var(--ink)}
+    footer{
+      border-top:1px solid var(--line);
+      padding-block:26px 36px;
+      font-size:.78rem;
+      color:var(--muted)
+    }
+    footer strong{color:var(--ink)}
+    footer p{max-width:110ch}
+    footer p+p{margin-top:9px}
+    @media(min-width:900px){
+      .deferred{
+        content-visibility:auto;
+        contain-intrinsic-size:auto 700px
+      }
+    }
+    @media(max-width:900px){
+      .categories{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .atlas-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .hero-answer{padding:22px}
+      .cost-layout,.faq-layout{
+        gap:30px;
+        grid-template-columns:1fr 1.5fr
+      }
+      .guide{padding:23px}
+      .intro-line{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:20px
+      }
+    }
+    @media(max-width:620px){
+      .wrap{width:calc(100% - 28px)}
+      .masthead{padding-block:16px}
+      .edition{font-size:.62rem;letter-spacing:.07em}
+      .wordmark{font-size:1rem}
+      .category-section{padding-top:15px}
+      .categories{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .categories a{font-size:.83rem;min-height:65px;padding:10px}
+      .intro{padding-top:30px}
+      h1{font-size:clamp(3rem,12.5vw,4.6rem)}
+      .intro-line p{font-size:.98rem}
+      .hero-panel,.reading-grid,.cost-layout,.faq-layout,.section-heading{
+        grid-template-columns:1fr
+      }
+      .hero-image img{aspect-ratio:1.3}
+      .hero-answer{padding:25px;gap:15px}
+      .section{padding-block:38px}
+      .section-heading{gap:18px;margin-bottom:24px}
+      .reading-grid{gap:18px}
+      .guide{padding:24px}
+      .atlas-grid{gap:12px}
+      .atlas figcaption{padding:14px;font-size:.8rem}
+      .atlas figcaption strong{font-size:.94rem}
+      .cost-layout,.faq-layout{gap:28px}
+      .closing{
+        align-items:flex-start;
+        flex-direction:column;
+        padding:25px;
+        margin-bottom:30px
+      }
+      .closing h2{font-size:1.8rem}
+      th,td{padding:13px;font-size:.83rem}
+    }
+    @media(prefers-reduced-motion:no-preference){
+      a{transition:background-color .15s ease,border-color .15s ease}
+    }
+    @media print{
+      body{background:#fff;color:#000}
+      .intro,.atlas,.closing{background:#fff;color:#000}
+      .intro h1 span,.intro .eyebrow,.intro-line p,.intro-bottom{
+        color:#000
+      }
+      .categories,.atlas-grid{grid-template-columns:repeat(2,1fr)}
+      .guide,figure,details{break-inside:avoid}
+      .deferred{content-visibility:visible}
+      .button{background:#fff;color:#000;border:1px solid #000}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "MyCNBox spreadsheet – dansk guide til fund, størrelser og QC",
+        "inLanguage": "da",
+        "description": "Dansk vejledning i produktresearch, størrelser, QC-billeder og fragtplanlægning."
+      },
+      {
+        "@type": "Article",
+        "headline": "En kortliste med en grund",
+        "inLanguage": "da",
+        "description": "Sådan opbygger du en kortliste med produktlinks, præcise varianter og relevante sammenligninger."
+      },
+      {
+        "@type": "Article",
+        "headline": "Mål det, der allerede passer",
+        "inLanguage": "da",
+        "description": "Sådan sammenligner du egne mål med størrelsesoplysninger for sko, tøj, kasketter og sæt."
+      },
+      {
+        "@type": "Article",
+        "headline": "Se efter det, billedet viser",
+        "inLanguage": "da",
+        "description": "Sådan undersøger du synlige detaljer på QC-billeder og forstår grænserne for billedkontrol."
+      },
+      {
+        "@type": "Article",
+        "headline": "Planlæg hele vejen hjem",
+        "inLanguage": "da",
+        "description": "Sådan planlægger du købets samlede omkostninger med oplysninger om fragt, pakning og returvilkår."
+      },
+      {
+        "@type": "FAQPage",
+        "inLanguage": "da",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Hvordan bruger jeg MyCNBox spreadsheet på dansk?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Start med en kategori, og gem det oprindelige produktlink, variant og mål. Brug vejledningen her til at sammenligne oplysninger; kontrollér derefter den aktuelle varebeskrivelse og vilkårene før bestilling."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kan jeg downloade et regneark her?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nej. Denne side er en dansk vejledning med kategoriindgange, ikke et regneark til download. Kategorierne åbner de angivne afdelinger på Cafans."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Er QC-billeder et bevis på ægthed?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nej. QC-billeder kan hjælpe med at vurdere synlige detaljer ved en vare. De dokumenterer ikke i sig selv ægthed, materialets sammensætning eller langtidsholdbarhed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvordan vælger jeg skostørrelse uden at prøve skoene?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Mål begge fødder, og sammenlign den længste med størrelsesvejledningen for den konkrete model. Afklar forskellen mellem fodlængde og indvendige skomål, og tag også højde for bredden."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvad gør jeg, hvis en vare mangler mål?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bed om de relevante mål i centimeter og en forklaring på målemetoden. Et størrelsesbogstav eller en model på et foto er ikke tilstrækkeligt til at afgøre pasformen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvad koster fragt til Danmark?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Der er ikke én fast pris i denne guide. Bed om en aktuel beregning for din destination, varetype, pakkede vægt og pakkens mål, og kontrollér hvilke omkostninger beregningen omfatter."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Er de viste mærkevarer til salg her?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nej. Billederne er illustrationer til vejledningen. De dokumenterer ikke lagerstatus, ægthed eller tilgængelighed i det katalog, som du åbner via Cafans."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Er siden officielt tilknyttet MyCNBox eller mærkerne?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nej. Dette er en uafhængig købsguide uden erklæret officiel tilknytning til MyCNBox, Nike, Gucci, Louis Vuitton eller Hermès. Siden behandler ikke ordrer eller betalinger."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/pkkwg/">
+</head>
+<body>
+  <header class="wrap masthead">
+    <a class="wordmark" href="https://www.cafans.com" aria-label="Åbn Cafans">FUND<span> / </span>MED OMTANKE</a>
+    <p class="edition">Dansk købsguide · DA</p>
+  </header>
+
+  <nav class="wrap category-section" aria-label="Produktkategorier på Cafans">
+    <p class="category-title">Start med en kategori <span aria-hidden="true">↘</span></p>
+    <div class="categories">
+      <a href="https://cafans.com/category-911-Shoes.html">Sko<small>Sneakers og hverdagssko</small></a>
+      <a href="https://cafans.com/category-912-Hoodies%2FSweaters.html">Hættetrøjer og strik<small>Lag til hverdagen</small></a>
+      <a href="https://cafans.com/category-913-T-Shirts.html">T-shirts<small>Snit, længde og materiale</small></a>
+      <a href="https://cafans.com/category-914-Jackets.html">Jakker<small>Plads til et ekstra lag</small></a>
+      <a href="https://cafans.com/category-915-Pants%2FShorts.html">Bukser og shorts<small>Talje og benlængde</small></a>
+      <a href="https://cafans.com/category-916-Headwear.html">Hovedbeklædning<small>Kasketter og andre hoveddele</small></a>
+      <a href="https://cafans.com/category-917-Sets.html">Sæt<small>Overdel og underdel</small></a>
+      <a href="https://cafans.com/category-918-underwear%2Funderpants.html">Undertøj<small>Pasform tæt på kroppen</small></a>
+      <a href="https://cafans.com/category-919-Jersey.html">Sportstrøjer<small>Holdstil og bevægelsesrum</small></a>
+      <a href="https://cafans.com/category-920-Accessories.html">Tilbehør<small>Tasker, smykker og detaljer</small></a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div class="wrap">
+        <p class="eyebrow">MyCNBox spreadsheet · et dansk overblik</p>
+        <h1 id="page-title">Færre gæt.<br><span>Bedre valg.</span></h1>
+        <div class="intro-line">
+          <p>Et godt fund passer til mere end dit humør. Find din kategori, se på de konkrete mål, og få styr på de spørgsmål, som et flot produktbillede ikke besvarer.</p>
+          <a class="button" href="https://www.cafans.com">Udforsk Cafans <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-panel">
+          <figure class="hero-image">
+            <img src="https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/43c209a6-8a42-460d-9c1c-29b576df33ad/AIR+MAX+90.png" alt="Nike Air Max 90 i lyse nuancer med mørke detaljer, vist fra siden" width="936" height="1170" fetchpriority="high" loading="eager" decoding="async">
+            <figcaption>Nike Air Max 90 · illustration til guiden</figcaption>
+          </figure>
+          <aside class="hero-answer" aria-labelledby="definition">
+            <p class="short">Det korte svar</p>
+            <h2 id="definition">Hvad er MyCNBox spreadsheet?</h2>
+            <p>Udtrykket bruges om produktoversigter og links, som hjælper dig med at undersøge varer i forbindelse med MyCNBox. En oversigt er et udgangspunkt for research; den aktuelle varebeskrivelse afgør, hvad der faktisk tilbydes.</p>
+            <ul>
+              <li>Gem model, variant og det oprindelige produktlink.</li>
+              <li>Sammenlign mål og billeder for netop dit valg.</li>
+              <li>Kontrollér den samlede pris, før du betaler.</li>
+            </ul>
+          </aside>
+        </div>
+        <p class="intro-bottom">Uafhængig vejledning. Kategorierne åbner Cafans. Siden modtager hverken ordrer eller betaling.</p>
+      </div>
+    </section>
+
+    <section class="wrap section deferred" aria-labelledby="guides-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Temasider i ét overblik</p>
+          <h2 id="guides-title">Undersøg det,<br>du skal bruge.</h2>
+        </div>
+        <p>Brug disse fire emner som din læserute: MyCNBox produktfund, MyCNBox størrelsesguide, MyCNBox QC-billeder og MyCNBox fragtplanlægning. Hver del tager fat i en konkret beslutning.</p>
+      </div>
+
+      <div class="reading-grid">
+        <article class="guide" aria-labelledby="finds-title">
+          <span class="number">01 / PRODUKTFUND</span>
+          <h3 id="finds-title">En kortliste med en grund</h3>
+          <p>MyCNBox produktfund bliver lettere at sammenligne, når du skriver, hvorfor en vare er relevant. Vælg efter brug, pasform og nødvendige detaljer frem for antallet af gemte links.</p>
+          <dl>
+            <div>
+              <dt>Sådan sammenligner du sneakers online</dt>
+              <dd>Vælg modeller til samme brug. Sammenhold lukning, sålens profil og plads omkring forfoden; et lignende udseende betyder ikke samme pasform.</dd>
+            </div>
+            <div>
+              <dt>Find produktets oprindelige link</dt>
+              <dd>Gem link og varenummer sammen med farve og størrelse. Kontrollér, at destinationen viser den samme variant som din note.</dd>
+            </div>
+            <div>
+              <dt>Tjek farve og variant før bestilling</dt>
+              <dd>Se på variantteksten og det valgte billede samtidigt. Et hovedbillede kan vise en anden udgave end den, du har markeret.</dd>
+            </div>
+            <div>
+              <dt>Vælg en jakke til lag på lag</dt>
+              <dd>Tag udgangspunkt i det tøj, du vil bære under jakken. Undersøg bevægelsesrum ved skuldre og overarme og mulighed for at justere ærmerne.</dd>
+            </div>
+            <div>
+              <dt>Sammenlign sportstrøjer og hverdagstrøjer</dt>
+              <dd>Afklar, om trøjen skal bruges til aktivitet eller afslappet brug. Undersøg snit, oplyst materiale og vaskeanvisning for den enkelte model.</dd>
+            </div>
+          </dl>
+          <a class="article-link" href="https://www.cafans.com">Fortsæt din produktresearch på Cafans ↗</a>
+        </article>
+
+        <article class="guide" aria-labelledby="sizes-title">
+          <span class="number">02 / STØRRELSESGUIDE</span>
+          <h3 id="sizes-title">Mål det, der allerede passer</h3>
+          <p>Brug MyCNBox størrelsesguide som en metode: sammenlign sælgerens oplysninger med et stykke tøj eller et par sko, som du kender. Bogstaver og størrelsesnumre kan ikke stå alene.</p>
+          <dl>
+            <div>
+              <dt>Mål din fod til sneakers</dt>
+              <dd>Mål begge fødder stående, og sammenlign den længste med modellens vejledning. Afklar, om tabellen beskriver fodlængde eller indvendige skomål.</dd>
+            </div>
+            <div>
+              <dt>Læs størrelsestabeller i centimeter</dt>
+              <dd>Kontrollér, om et mål er omkreds eller bredde målt fladt. Sammenlign kun tal, som er taget på samme måde.</dd>
+            </div>
+            <div>
+              <dt>Vælg den rigtige størrelse hættetrøje</dt>
+              <dd>Læg en passende trøje fladt, og mål brystbredde, kropslængde og ærme. Tænk over, om du ønsker en tæt eller rummelig pasform.</dd>
+            </div>
+            <div>
+              <dt>Sammenlign taljemål og indvendig benlængde</dt>
+              <dd>Notér også skridtdybde og eventuel elastik. To bukser med samme talje kan sidde forskelligt over hofter og lår.</dd>
+            </div>
+            <div>
+              <dt>Vælg kasket efter hovedomkreds</dt>
+              <dd>Mål dér, hvor kasketten skal sidde. Bed om det faktiske justeringsinterval, hvis beskrivelsen kun siger én størrelse.</dd>
+            </div>
+            <div>
+              <dt>Kontrollér størrelser i et tøjsæt</dt>
+              <dd>Se overdel og underdel hver for sig. Spørg, om delene kan vælges i forskellige størrelser, og undersøg returvilkår, før du beslutter dig.</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="guide" aria-labelledby="qc-title">
+          <span class="number">03 / BILLEDKONTROL</span>
+          <h3 id="qc-title">Se efter det, billedet viser</h3>
+          <p>MyCNBox QC-billeder er relevante, når de kan knyttes til din konkrete vare. Brug dem til at stille præcise spørgsmål om synlige detaljer, og hold billedkontrol adskilt fra dokumentation for ægthed.</p>
+          <dl>
+            <div>
+              <dt>Læs QC-billeder af sko</dt>
+              <dd>Se begge sko fra siden, ovenfra og bagfra. Sammenlign parrets form, farve og synlige samlinger, og bed om et ekstra billede ved uklarheder.</dd>
+            </div>
+            <div>
+              <dt>Kontrollér syninger på tøj</dt>
+              <dd>Undersøg sømme ved skuldre, lommer og kanter. Et oversigtsfoto er sjældent nok til at vurdere et bestemt område.</dd>
+            </div>
+            <div>
+              <dt>Bed om nærbilleder af detaljer</dt>
+              <dd>Beskriv præcis, hvad du mangler: eksempelvis lynlåsen lukket, kanten af sålen eller etiketten læseligt fotograferet.</dd>
+            </div>
+            <div>
+              <dt>Forstå farveforskelle på produktfotos</dt>
+              <dd>Lys og skærmindstillinger påvirker indtrykket. Brug flere billeder og farvebetegnelsen frem for at behandle én skærmvisning som et facit.</dd>
+            </div>
+            <div>
+              <dt>Tjek låse og mål på smykker</dt>
+              <dd>Bed om oplysninger om lukning, længde og materiale. Et billede alene dokumenterer ikke metallets sammensætning eller holdbarhed.</dd>
+            </div>
+            <div>
+              <dt>Skeln mellem QC og ægthed</dt>
+              <dd>Visuel kontrol kan pege på en synlig fejl eller forkert variant. Den erstatter ikke sporbar dokumentation for oprindelse og ægthed.</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="guide" aria-labelledby="shipping-title">
+          <span class="number">04 / FRAGTPLANLÆGNING</span>
+          <h3 id="shipping-title">Planlæg hele vejen hjem</h3>
+          <p>MyCNBox fragtplanlægning begynder med de oplysninger, du faktisk har: indhold, destination, pakket vægt og mål. Bed om en aktuel beregning frem for at bruge en anden købers beløb.</p>
+          <dl>
+            <div>
+              <dt>Beregn den samlede pris på dit køb</dt>
+              <dd>Hold varepris, indenrigsfragt, eventuelle tjenester og international fragt adskilt. Spørg, hvilke øvrige omkostninger der er inkluderet i beløbet.</dd>
+            </div>
+            <div>
+              <dt>Sammenlign faktisk vægt og volumenvægt</dt>
+              <dd>En fragtberegning kan afhænge af pakkens størrelse. Brug transportørens aktuelle metode og den færdigpakkede forsendelses oplysninger.</dd>
+            </div>
+            <div>
+              <dt>Vurdér samlet forsendelse af flere varer</dt>
+              <dd>Indhent beregninger for samme indhold både samlet og opdelt. Færre pakker er ikke i sig selv dokumentation for en lavere totalpris.</dd>
+            </div>
+            <div>
+              <dt>Planlæg levering til Danmark</dt>
+              <dd>Kontrollér, at beregningen gælder din adresse og den valgte varetype. Se den aktuelle leveringstid som en oplysning, der skal bekræftes ved bestilling.</dd>
+            </div>
+            <div>
+              <dt>Afklar returvilkår før afsendelse</dt>
+              <dd>Gem vilkår og relevant dokumentation. Spørg, hvem der håndterer en fejl, hvilke frister der gælder, og hvem der betaler en eventuel returforsendelse.</dd>
+            </div>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section class="atlas section deferred" aria-labelledby="atlas-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Et lille detaljeatlas</p>
+            <h2 id="atlas-title">Form. Funktion.<br>De små forskelle.</h2>
+          </div>
+          <p>Brug billederne som træning i at stille bedre spørgsmål. De illustrerer forskellige varetyper og er ikke produktannoncer eller en oversigt over Cafans' lager.</p>
+        </div>
+
+        <div class="atlas-grid">
+          <figure>
+            <img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto%2Cu_9ddf04c7-2a9a-4d76-add1-d15af8f0263d%2Cc_scale%2Cfl_relative%2Cw_1.0%2Ch_1.0%2Cfl_layer_apply/94f6d19b-8ab6-41da-8dd2-d9b718abfaea/M%2BNSW%2BCLUB%2BHOODIE%2BPO%2BBB.png" alt="Sort Nike-hættetrøje med kængurulomme og lille hvidt logo på brystet" width="535" height="669" loading="lazy" decoding="async">
+            <figcaption><strong>Nike / hættetrøje</strong>Sammenlign ribkant, hætte og placering af lommer. Find de relevante mål i beskrivelsen frem for at gætte ud fra modellens størrelse.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="https://media.gucci.com/style/DarkGray_Center_0_0_600x600/1659595532/681264_3HAGJ_2564_001_100_0000_Light-Casquette-en-toileGG-jumbo.jpg" alt="Beige Gucci-kasket med stort GG-mønster og brun kant langs skyggen" width="600" height="600" loading="lazy" decoding="async">
+            <figcaption><strong>Gucci / kasket</strong>Skyggens længde og pullens højde ændrer proportionerne. Kontrollér hovedomkreds og justering på den vare, du overvejer.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="https://sg.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton--M46977_PM2_Front%20view.jpg?wid=480&amp;hei=480" alt="Louis Vuitton Speedy Bandoulière 25 i brunt Monogram-mønster med lyse hanke og skulderrem" width="480" height="480" loading="lazy" decoding="async">
+            <figcaption><strong>Louis Vuitton / taske</strong>Se på åbning, rem og hankenes form. Sammenlign taskens ydre mål med det, du vil have plads til i hverdagen.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="https://assets.hermes.com/is/image/hermesproduct/700001FP8A_front_wm_101?wid=480&amp;hei=480" alt="Orange Hermès Clic H-armbånd med sølvfarvede kanter og H-formet lukning" width="480" height="480" loading="lazy" decoding="async">
+            <figcaption><strong>Hermès / armbånd</strong>Se på lukning og indvendige mål. Kontrollér pasformen omkring håndleddet og få materialet oplyst skriftligt.</figcaption>
+          </figure>
+        </div>
+
+        <p class="image-note">Billeder fra mærkernes egne billedservere. Mærkenavne identificerer illustrationerne og indebærer ingen officiel tilknytning, anbefaling eller garanti for varer på andre hjemmesider.</p>
+      </div>
+    </section>
+
+    <section class="wrap section deferred" aria-labelledby="cost-title">
+      <div class="cost-layout">
+        <header>
+          <p class="eyebrow">Gem de rigtige oplysninger</p>
+          <h2 id="cost-title">Dit næste fund<br>på én linje.</h2>
+          <p>En brugbar note rummer model, variant, mål, kilde og afklaringer. Så kan du vende tilbage til samme udgangspunkt, også hvis produktoversigten ændrer sig.</p>
+        </header>
+
+        <div>
+          <div class="table-shell">
+            <table>
+              <caption>En enkel sammenligningsnote</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Felt</th>
+                  <th scope="col">Det skal du notere</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Identitet</th>
+                  <td>Produktlink, varenummer, farve og præcis variant.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Pasform</th>
+                  <td>De vigtigste mål og sælgerens målemetode.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Billedkontrol</th>
+                  <td>Hvad du har set, og hvilke detaljer du stadig mangler.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Samlet beløb</th>
+                  <td>Varer, transport, valgte tjenester og afklarede øvrige omkostninger.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Beslutning</th>
+                  <td>Det spørgsmål, som skal besvares, før du vil bestille.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="cost-note">Tjek materialer i undertøj og tilbehør ud fra konkrete oplysninger. Produktfotos kan ikke erstatte en materialebeskrivelse eller fortælle, hvordan noget føles mod huden.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section faq-section deferred" aria-labelledby="faq-title">
+      <div class="faq-layout">
+        <header>
+          <p class="eyebrow">Spørgsmål og svar</p>
+          <h2 id="faq-title">Få det afklaret,<br>før du vælger.</h2>
+          <p>Korte svar til dig, der vil bruge en produktoversigt som et praktisk researchværktøj.</p>
+        </header>
+
+        <div class="faq">
+          <details open>
+            <summary>Hvordan bruger jeg MyCNBox spreadsheet på dansk?</summary>
+            <p>Start med en kategori, og gem det oprindelige produktlink, variant og mål. Brug vejledningen her til at sammenligne oplysninger; kontrollér derefter den aktuelle varebeskrivelse og vilkårene før bestilling.</p>
+          </details>
+
+          <details>
+            <summary>Kan jeg downloade et regneark her?</summary>
+            <p>Nej. Denne side er en dansk vejledning med kategoriindgange, ikke et regneark til download. Kategorierne åbner de angivne afdelinger på Cafans.</p>
+          </details>
+
+          <details>
+            <summary>Er QC-billeder et bevis på ægthed?</summary>
+            <p>Nej. QC-billeder kan hjælpe med at vurdere synlige detaljer ved en vare. De dokumenterer ikke i sig selv ægthed, materialets sammensætning eller langtidsholdbarhed.</p>
+          </details>
+
+          <details>
+            <summary>Hvordan vælger jeg skostørrelse uden at prøve skoene?</summary>
+            <p>Mål begge fødder, og sammenlign den længste med størrelsesvejledningen for den konkrete model. Afklar forskellen mellem fodlængde og indvendige skomål, og tag også højde for bredden.</p>
+          </details>
+
+          <details>
+            <summary>Hvad gør jeg, hvis en vare mangler mål?</summary>
+            <p>Bed om de relevante mål i centimeter og en forklaring på målemetoden. Et størrelsesbogstav eller en model på et foto er ikke tilstrækkeligt til at afgøre pasformen.</p>
+          </details>
+
+          <details>
+            <summary>Hvad koster fragt til Danmark?</summary>
+            <p>Der er ikke én fast pris i denne guide. Bed om en aktuel beregning for din destination, varetype, pakkede vægt og pakkens mål, og kontrollér hvilke omkostninger beregningen omfatter.</p>
+          </details>
+
+          <details>
+            <summary>Er de viste mærkevarer til salg her?</summary>
+            <p>Nej. Billederne er illustrationer til vejledningen. De dokumenterer ikke lagerstatus, ægthed eller tilgængelighed i det katalog, som du åbner via Cafans.</p>
+          </details>
+
+          <details>
+            <summary>Er siden officielt tilknyttet MyCNBox eller mærkerne?</summary>
+            <p>Nej. Dette er en uafhængig købsguide uden erklæret officiel tilknytning til MyCNBox, Nike, Gucci, Louis Vuitton eller Hermès. Siden behandler ikke ordrer eller betalinger.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap closing" aria-labelledby="closing-title">
+      <div>
+        <h2 id="closing-title">Vælg en kategori.<br>Tag spørgsmålene med.</h2>
+        <p>Brug MyCNBox spreadsheet som indgang til din research, og vælg først, når mål, detaljer og samlede omkostninger er tilstrækkeligt afklaret.</p>
+      </div>
+      <a class="button" href="https://www.cafans.com">Åbn Cafans <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p><strong>FUND / MED OMTANKE</strong> · Dansk vejledning til produktresearch, pasform og visuel kontrol.</p>
+    <p>Illustrationer og generelle råd er ikke en vurdering af en bestemt sælger eller et bestemt tilbud. Følg altid oplysningerne for den konkrete vare. <a href="https://www.cafans.com">Besøg Cafans</a>.</p>
+  </footer>
+</body>
+</html>
